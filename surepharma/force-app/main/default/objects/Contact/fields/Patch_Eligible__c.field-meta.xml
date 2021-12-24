@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patch_Eligible__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(Age__c &lt; 6, Age__c &gt; 1)</formula>
+    <label>Patch Eligible</label>
+    <type>Checkbox</type>
+</CustomField>

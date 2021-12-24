@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LogId__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>External Id of emergency call from EmergencyCallLogMock</description>
+    <externalId>true</externalId>
+    <inlineHelpText>Generated from an external source</inlineHelpText>
+    <label>LogId</label>
+    <length>5</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

@@ -1,0 +1,34 @@
+{
+    "orgName": "SurePharma",
+    "edition": "Developer",
+    "features": ["AddCustomApps:30", "AddCustomObjects:30", "AddCustomRelationships:10", "AddCustomTabs:30", "ServiceCloud", "API", "BigObjectsBulkAPI", "ConnectedAppToolingAPI", 
+			"ContactsToMultipleAccounts", "DefaultWorkflowUser", "EventLogFile", "Interaction", "LightningScheduler", "LightningSalesConsole",
+			"LightningServiceConsole", "ProcessBuilder", "RecordTypes", "SalesUser", "ServiceUser", "SharedActivities", "Sites", "StateAndCountryPicklist", 
+			"Workflow", "WorkflowFlowActionFeature" ],
+    "settings": {
+		"communitiesSettings": {
+			"enableNetworksEnabled": true
+		},
+		"mobileSettings": {
+			"enableS1EncryptedStoragePref2": true
+		},
+		"omniChannelSettings": {
+			"enableOmniChanngel": true
+		},
+		"caseSettings": {
+			"systemUserEmail": "support@surepharma.org"
+		}
+    },
+    "objectSettings": {
+		"account": {
+			"sharingModel": "private",
+			"defaultRecordType": "default"
+    		},
+		"contact": {
+			"sharingModel": "private",
+			"defaultRecordType": "default"
+		}
+    },
+    "username": "blake.holleman@gmail.com",
+    "adminEmail": "blake.holleman@gmail.com"
+}

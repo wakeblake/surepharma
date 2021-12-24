@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Update Emergency Calls">
+        <lightning-button variant="brand" label="Update" slot="actions" onclick={handleClick}></lightning-button>
+        <p class="slds-p-horizontal_small">Click to request updated emergency call records from third-party emergency hotline</p>
+        <p slot="footer">
+            <template if:true={isExecuting}>
+                <div class="spinner">
+                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                </div>    
+            </template>
+        </p>
+    </lightning-card>
+</template>

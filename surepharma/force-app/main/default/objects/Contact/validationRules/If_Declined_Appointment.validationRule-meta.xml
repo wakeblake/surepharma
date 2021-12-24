@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Declined_Appointment</fullName>
+    <active>true</active>
+    <description>Field cannot be empty if Declined_Appointment__c checked</description>
+    <errorConditionFormula>Declined_Appointment__c = True &amp;&amp;  ISBLANK(Reason_Declined__c)</errorConditionFormula>
+    <errorDisplayField>Reason_Declined__c</errorDisplayField>
+    <errorMessage>A reason must be provided if &quot;Declined Appointment&quot; is checked</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Up_Eligible__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Apex-generated: Patch_Applied_Datetime__c + 48 hours.  Used to auto-toggle Stage__c to &quot;Follow-up&quot;.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Set by apex formula: &quot;Patch Applied Datetime&quot; plus 48 hours</inlineHelpText>
+    <label>Follow Up Eligible</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Follow_Up</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>Stage__c</columns>
+    <columns>Follow_Up_Datetime__c</columns>
+    <columns>FULL_NAME</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Age__c</columns>
+    <columns>CONTACT.PHONE1</columns>
+    <columns>Account.Primary_Contact__c</columns>
+    <columns>Pediatrician__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Patch_Eligible__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <filters>
+        <field>Stage__c</field>
+        <operation>equals</operation>
+        <value>Follow-Up</value>
+    </filters>
+    <filters>
+        <field>CONTACT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Contact.Children</value>
+    </filters>
+    <label>Follow Up</label>
+</ListView>

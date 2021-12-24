@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Share_Pediatrician_Accounts</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <description>For sharing pediatrician accounts between representatives</description>
+        <label>Share Pediatrician Accounts</label>
+        <sharedTo>
+            <group>Representatives</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Type</field>
+            <operation>equals</operation>
+            <value>Pediatrician</value>
+        </criteriaItems>
+    </sharingCriteriaRules>
+</SharingRules>
