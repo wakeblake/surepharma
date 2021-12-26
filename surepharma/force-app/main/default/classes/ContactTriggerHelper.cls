@@ -14,7 +14,7 @@ public class ContactTriggerHelper {
         Id adultRtId = getContactRecordTypeId('Adults');
 
         Account[] accts = [
-            SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry, BillingAddress, Phone, 
+            SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry, BillingAddress, Phone, OwnerId,
             (SELECT FirstName, LastName FROM Contacts WHERE RecordTypeId=:adultRtId)
             FROM Account WHERE Type='Household'
         ];
@@ -32,7 +32,7 @@ public class ContactTriggerHelper {
         Id hpRtId = getContactRecordTypeId('Health Professionals');
 
         Account[] accts = [
-            SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry, BillingAddress, Phone, 
+            SELECT Id, BillingStreet, BillingCity, BillingState, BillingPostalCode, BillingCountry, BillingAddress, Phone, OwnerId,
             (SELECT FirstName, LastName FROM Contacts WHERE RecordTypeId=:hpRtId)
             FROM Account WHERE Type='Pediatrician'
         ];

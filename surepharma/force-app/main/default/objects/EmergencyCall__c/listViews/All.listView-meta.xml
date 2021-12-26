@@ -5,6 +5,7 @@
     <columns>Date__c</columns>
     <columns>Contact__c</columns>
     <columns>LAST_ACTIVITY</columns>
+    <columns>OWNER.ALIAS</columns>
     <filterScope>Everything</filterScope>
     <label>All</label>
 </ListView>

@@ -10,13 +10,13 @@ trigger ContactTrigger on Contact (before insert, before update) {
     for (Contact c : Trigger.new) {
         if (c.RecordTypeId != childRtId) {
             Account a = pdAcctsMap.get(c.AccountId) == null ? hhAcctsMap.get(c.AccountId) : pdAcctsMap.get(c.AccountId);
-            if (a.BillingAddress != null) {
-                c.MailingStreet = a.BillingStreet;
-                c.MailingCity = a.BillingCity;
-                c.MailingState = a.BillingState;
-                c.MailingPostalCode = a.BillingPostalCode;
-                c.MailingCountry = a.BillingCountry;   
-            }        
+            c.MailingStreet = a.BillingStreet;
+            c.MailingCity = a.BillingCity;
+            c.MailingState = a.BillingState;
+            c.MailingPostalCode = a.BillingPostalCode;
+            c.MailingCountry = a.BillingCountry;         
+            c.Phone = a.Phone;
+            c.OwnerId = a.OwnerId;
         }
 
         if (c.RecordTypeId == childRtId) {
@@ -29,13 +29,13 @@ trigger ContactTrigger on Contact (before insert, before update) {
             }
             Datetime now = Datetime.now();
 
-            if (a.BillingAddress != null) {
-                c.MailingStreet = a.BillingStreet;
-                c.MailingCity = a.BillingCity;
-                c.MailingState = a.BillingState;
-                c.MailingPostalCode = a.BillingPostalCode;
-                c.MailingCountry = a.BillingCountry;   
-            } 
+            c.MailingStreet = a.BillingStreet;
+            c.MailingCity = a.BillingCity;
+            c.MailingState = a.BillingState;
+            c.MailingPostalCode = a.BillingPostalCode;
+            c.MailingCountry = a.BillingCountry;  
+            c.Phone = a.Phone;
+            c.OwnerId = a.OwnerId;
             
             c.Adults_In_Household__c = relatedAdults.size() > 0 ? String.join(relatedAdults, ', ') : '';
 

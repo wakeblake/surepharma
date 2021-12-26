@@ -23,6 +23,10 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>EmergencyCallLogCalloutTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>EventTriggerHelper</apexClass>
         <enabled>false</enabled>
     </classAccesses>
@@ -39,6 +43,7 @@
         <enabled>false</enabled>
     </classAccesses>
     <custom>true</custom>
+    <description>Basic metadata permissions for Doctor users</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountNumber</field>

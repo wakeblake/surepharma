@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "surepharma1",
+  "name": "surepharma",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "52.0"
