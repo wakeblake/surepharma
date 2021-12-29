@@ -12,7 +12,7 @@
     </applicationVisibilities>
     <classAccesses>
         <apexClass>ContactTriggerHelper</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>ContactTriggerHelperTest</apexClass>
@@ -20,7 +20,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>EmergencyCallLogCallout</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>EmergencyCallLogCalloutTest</apexClass>
@@ -28,7 +28,7 @@
     </classAccesses>
     <classAccesses>
         <apexClass>EventTriggerHelper</apexClass>
-        <enabled>false</enabled>
+        <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
         <apexClass>EventTriggerHelperTest</apexClass>
