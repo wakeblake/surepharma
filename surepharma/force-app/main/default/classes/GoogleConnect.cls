@@ -1,5 +1,5 @@
 public class GoogleConnect {
-    private final static String AUTH_ENDPOINT = 'https://oauth2.googleapis.com/token'; //'https://www.googleapis.com/oauth2/v4/token'; //
+    private final static String AUTH_ENDPOINT = 'https://oauth2.googleapis.com/token';
     private final static String SCOPE = 'https://www.googleapis.com/auth/spreadsheets';
     private final static String CACHE_ACCESS_TOKEN_KEY = 'googleCloudAccessToken';
     private final static String ISS = 'surepharma@surepharma.iam.gserviceaccount.com';
@@ -59,34 +59,5 @@ public class GoogleConnect {
 
     public static Boolean clearAccessToken() {
         return Cache.Org.remove(CACHE_ACCESS_TOKEN_KEY);
-    }
-
-    public static HttpResponse sendRequest() {
-        String token = getAccessToken();
-        Http http = new Http();
-        HttpRequest req = new HttpRequest();
-        req.setHeader('Authorization', 'Bearer ' + token);
-        String spreadsheetId = '1ByVvhND1weHo1pQLEhmXv5texOd_O_1n3r7HC2MOobg';
-        req.setEndpoint('https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '/values/A1:Z1000?');  // grab entire sheet (would need to fix for larger datasets)
-        req.setMethod('GET');
-
-        HttpResponse response = http.send(req);
-        if (response.getStatusCode() != 200) {
-            System.debug('Failed to return expected response: ' + response.getStatusCode());
-        }
-
-        return response;
-    }
-
-    @AuraEnabled
-    public static String clientHandler() {
-        String value = 'Success';
-        try {
-            HttpResponse resp = sendRequest();
-            EmergencyCallLogCallout.uploadEmergencyCalls(resp);
-        } catch (Exception e) {
-            value = e.getMessage();
-        }
-        return value;
     }
 }

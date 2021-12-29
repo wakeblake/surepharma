@@ -1,6 +1,6 @@
 import { LightningElement, api} from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-import clientHandler from '@salesforce/apex/GoogleConnect.clientHandler'; //'@salesforce/apex/EmergencyCallLogCallout.clientHandler';
+import clientHandler from '@salesforce/apex/EmergencyCallLogCallout.clientHandler';
 
 export default class UpdateEmergencyCalls extends LightningElement {
     isExecuting = false;

@@ -1,12 +1,13 @@
 public class EmergencyCallLogCallout {
 
+    /* Deprecated this for server-server connection via GoogleConnect class 
+
     public static HttpResponse makeGetCallout() {
         Http http = new Http();
         HttpRequest request = new HttpRequest();
 
         // TODO store some place
         String spreadsheetId = '1ByVvhND1weHo1pQLEhmXv5texOd_O_1n3r7HC2MOobg';
-        //String query = 'includeGridData=true';
 
         // using Named Credential
         request.setEndpoint('callout:GoogleAPI/' + spreadsheetId + '/values/A1:Z1000?');  // grab entire sheet (would need to fix for larger datasets)
@@ -14,6 +15,24 @@ public class EmergencyCallLogCallout {
 
         HttpResponse response = http.send(request);
 
+        if (response.getStatusCode() != 200) {
+            System.debug('Failed to return expected response: ' + response.getStatusCode());
+        }
+
+        return response;
+    }
+    */
+
+    public static HttpResponse sendRequest() {
+        String token = GoogleConnect.getAccessToken();
+        Http http = new Http();
+        HttpRequest req = new HttpRequest();
+        req.setHeader('Authorization', 'Bearer ' + token);
+        String spreadsheetId = '1ByVvhND1weHo1pQLEhmXv5texOd_O_1n3r7HC2MOobg';
+        req.setEndpoint('https://sheets.googleapis.com/v4/spreadsheets/' + spreadsheetId + '/values/A1:Z1000?');  // grab entire sheet (would need to fix for larger datasets)
+        req.setMethod('GET');
+
+        HttpResponse response = http.send(req);
         if (response.getStatusCode() != 200) {
             System.debug('Failed to return expected response: ' + response.getStatusCode());
         }
@@ -66,7 +85,7 @@ public class EmergencyCallLogCallout {
     public static String clientHandler() {
         String value = 'Success';
         try {
-            HttpResponse resp = makeGetCallout();
+            HttpResponse resp = sendRequest();
             uploadEmergencyCalls(resp);
         } catch (Exception e) {
             value = e.getMessage();

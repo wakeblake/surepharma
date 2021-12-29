@@ -25,7 +25,7 @@ export default class UpdateEmergencyCalls extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Callout to Emergency Call service failed' + error
+                        message: 'Callout to Emergency Call service failed. Contact your administrator.'
                     })
                 )
             })
