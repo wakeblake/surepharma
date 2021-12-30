@@ -39,13 +39,17 @@ trigger ContactTrigger on Contact (before insert, before update) {
             
             c.Adults_In_Household__c = relatedAdults.size() > 0 ? String.join(relatedAdults, ', ') : '';
 
-            if (c.Patch_Applied_Datetime__c < now) {
+            if ( (c.Patch_Applied_Datetime__c) < now && (c.Patch_Applied_Datetime__c.addHours(48) > now)) {
                 c.Stage__c = 'Patch Applied';
             }
             
             if ( (c.Patch_Applied_Datetime__c != null) && (c.Patch_Applied_Datetime__c.addHours(48) < now) ) {
                 c.Follow_Up_Eligible__c = true;
-                c.Stage__c = 'Follow-Up';
+                if (c.Description == null) {
+                    c.Stage__c = 'Follow-Up';
+                } else {
+                    c.Stage__c = 'Complete';
+                }
             }
 
             if (c.Declined_Appointment__c == true) {
